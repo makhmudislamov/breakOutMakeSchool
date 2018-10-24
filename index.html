@@ -97,6 +97,7 @@
         drawBricks();
         collisionDetection();
         drawScore();
+        drawLives();
         // updating x and y on eveyframe everytime the ball is repainted = movement. if you dont clear it will leave a trail
         x += dx;
         y += dy;
@@ -112,8 +113,18 @@
                 dy = -dy;
             }
             else {
-                alert("GAME OVER");
-                document.location.reload();
+               lives--;
+                if (!lives) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                }
+                else {
+                    x = canvas.width / 2;
+                    y = canvas.height - 30;
+                    dx = 2;
+                    dy = -2;
+                    paddleX = (canvas.width - paddleWidth) / 2;
+                }
             }
         }
 
@@ -129,6 +140,7 @@
         else if (leftPressed && paddleX > 0) {
             paddleX -= 7;
         }
+        requestAnimationFrame(draw);
     }
 
     // adding buttons - user can control the movement of the pads
@@ -237,11 +249,17 @@
             }
         }
         
+    // user lives
+    var lives = 3;
 
-
+    function drawLives() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+        }
     // draw func will be called every 10 mlseconds forever
     // the ball is being repainted but not moving
-    setInterval(draw, 10)   
+    draw(); 
 
     
 
