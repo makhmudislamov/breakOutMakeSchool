@@ -212,7 +212,7 @@
             }
         }
     // creating array of colors to use inside the func
-    const colors = ["green", "red", "orange"];
+    const colors = ["green", "red"];
     // drawing bricks
    function drawBricks() {
             for (var c = 0; c < brickColumnCount; c++) {
@@ -229,10 +229,14 @@
                         // challenge 2 - set the rainbow
                         // const hue = c * 9;
                         // ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
-                        // challenge 3 - changed color of each row
+                        // challenge 3 - changed color of each row - colors array should have 3 colors
                         // ctx.fillStyle = colors[r%3]
                         // challenge 4 - changed color of each row
-                        ctx.fillStyle = colors[r % 3]
+                        // ctx.fillStyle = colors[r % 2];
+                        // challenge 5 - bricks alternate color
+                        ctx.fillStyle = colors[r % 2 & c % 2];
+                        
+
                         ctx.fill();
                         ctx.closePath();
                     }
