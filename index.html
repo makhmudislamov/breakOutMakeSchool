@@ -195,7 +195,7 @@
 
 
     // bricks
-    var brickRowCount = 3;
+    var brickRowCount = 6;
     var brickColumnCount = 9;
     var brickWidth = 75;
     var brickHeight = 20;
@@ -211,7 +211,8 @@
                 bricks[c][r] = { x: 0, y: 0, status: 1 };
             }
         }
-
+    // creating array of colors to use inside the func
+    const colors = ["green", "red", "orange"];
     // drawing bricks
    function drawBricks() {
             for (var c = 0; c < brickColumnCount; c++) {
@@ -224,7 +225,12 @@
                         ctx.beginPath();
                         ctx.rect(brickX, brickY, brickWidth, brickHeight);
                         // challenge 1 - changed the bricks` color
-                        ctx.fillStyle = "black";
+                        // ctx.fillStyle = "black";
+                        // challenge 2 - set the rainbow
+                        const hue = c * 9;
+                        ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+                        // challenge 3 - set the rainbow
+                        // ctx.fillStyle = colors[r%3]
                         ctx.fill();
                         ctx.closePath();
                     }
