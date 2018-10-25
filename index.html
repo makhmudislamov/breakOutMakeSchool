@@ -23,7 +23,7 @@
 
 <body>
     <!-- Creting Canvas -->
-    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <canvas id="myCanvas" width="800" height="800"></canvas>
 
     <script>
 	// declaring and selscting canvas
@@ -101,8 +101,6 @@
         // updating x and y on eveyframe everytime the ball is repainted = movement. if you dont clear it will leave a trail
         x += dx;
         y += dy;
-
-        // bouncing off the top, left and bottom
 
         // coordinates start with top left
         if (y + dy < ballRadius) {
@@ -198,7 +196,7 @@
 
     // bricks
     var brickRowCount = 3;
-    var brickColumnCount = 5;
+    var brickColumnCount = 9;
     var brickWidth = 75;
     var brickHeight = 20;
     var brickPadding = 10;
@@ -225,7 +223,8 @@
                         bricks[c][r].y = brickY;
                         ctx.beginPath();
                         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                        ctx.fillStyle = "#0095DD";
+                        // challenge 1 - changed the bricks` color
+                        ctx.fillStyle = "black";
                         ctx.fill();
                         ctx.closePath();
                     }
