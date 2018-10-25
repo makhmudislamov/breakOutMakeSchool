@@ -230,7 +230,9 @@
                         // const hue = c * 9;
                         // ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
                         // challenge 3 - changed color of each row
-                        ctx.fillStyle = colors[r%3]
+                        // ctx.fillStyle = colors[r%3]
+                        // challenge 3 - changed color of each row
+                        ctx.fillStyle = colors[c % 3]
                         ctx.fill();
                         ctx.closePath();
                     }
