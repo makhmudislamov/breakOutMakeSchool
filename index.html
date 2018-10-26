@@ -233,8 +233,8 @@
                         // ctx.fillStyle = colors[r%3]
                         // challenge 4 - changed color of each row
                         // ctx.fillStyle = colors[r % 2];
-                        // challenge 5 - bricks alternate color
-                        ctx.fillStyle = colors[r % 2 & c % 2];
+                        // challenge 5 - bricks alternate color - array has 2 colors
+                        ctx.fillStyle = colors[r % 2 && c % 2];
                         
 
                         ctx.fill();
