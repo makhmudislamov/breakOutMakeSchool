@@ -234,15 +234,15 @@
                         // challenge 4 - changed color of each row
                         // ctx.fillStyle = colors[r % 2];
                         // challenge 5 - bricks alternate color - array has 2 colors
-                        const grd = ctx.createLinearGradient(startX, startY, endX, endY);
-                        grd.addColorStop(0, "red");
+                        // colors[r % 2 && c % 2];
+                        const grd = ctx.createLinearGradient(brickX, brickY, (brickWidth+brickX) , brickHeight+brickY);
+                        grd.addColorStop(0, "orange");
                         grd.addColorStop(1, "white");
                         ctx.fillStyle = grd;
-                        ctx.fill(x, y, width, height);
-                        // colors[r % 2 && c % 2];
+                        // ctx.fill(x, y, width, height);
                         
 
-                        // ctx.fill();
+                        ctx.fill();
                         ctx.closePath();
                     }
                 }
