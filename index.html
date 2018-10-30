@@ -18,12 +18,28 @@
             display: block;
             margin: 0 auto;
         }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container > button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <!-- Creting Canvas -->
     <canvas id="myCanvas" width="800" height="800"></canvas>
+
+    <div class="container">
+
+        <button id="startGame">Start Game</button>
+    
+    </div>
 
     <script>
 	// declaring and selscting canvas
@@ -113,7 +129,8 @@
             else {
                lives--;
                 if (!lives) {
-                    alert("GAME OVER");
+                    // alert("GAME OVER");
+                    exit
                     document.location.reload();
                 }
                 else {
@@ -121,7 +138,7 @@
                     y = canvas.height - 30;
                     dx = 5;
                     dy = -5;
-                    paddleX = (canvas.width - paddleWidth) / 2;
+                    paddleX = (canvas.width - paddleWidth) ;
                 }
             }
         }
