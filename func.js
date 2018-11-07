@@ -92,4 +92,4 @@ class Game {
     }
 }
 
-new Game()
+// new Game()
