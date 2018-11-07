@@ -1,7 +1,10 @@
 
+
+
 // declaring and selscting canvas
 var canvas = document.getElementById("myCanvas");
-
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 // ctx is abbr for context
 var ctx = canvas.getContext("2d");
 
