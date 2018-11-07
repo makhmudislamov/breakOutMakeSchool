@@ -27,13 +27,6 @@ class Ball {
     }
 }
 
-//  creating a Ball named crusher, 50 is radius
-const crusher = new Ball(50);
-crusher.render(ctx);
-
-
-
-
 // creating Bricks with this class
 class Brick {
 
@@ -59,12 +52,7 @@ class Paddle {
     }
 }
 
-const saver = new Paddle(100, 20, 'red', canvas.width / 2, canvas.height - 20);
 
-saver.x = 500
-saver.render(ctx)
-
-// 
 
 // creating Score with this class
 class Score {
@@ -79,17 +67,24 @@ class  Lives {
 
 class Game {
     constructor() {
-        this.paddle = new Paddle()
-        this.ball = new Ball()
+
+        // creating paddle named saver
+        const saver = new Paddle(100, 20, 'red', canvas.width / 2, canvas.height - 20);
+        //  creating a Ball named crusher, 50 is radius
+        const crusher = new Ball(50);
+
+        // rendering
+        crusher.render(ctx);
+        saver.render(ctx)
         // ...
 
         // addEventListener('keydown', this.keyPressed) ....
     }
 
-    onKeyPressed(e) {
-        //...
-        this.paddle.x += 7
-    }
+    // onKeyPressed(e) {
+    //     //...
+    //     this.paddle.x += 7
+    // }
 }
 
-// new Game()
+ new Game()
