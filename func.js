@@ -6,14 +6,13 @@ canvas.height = window.innerHeight;
 // ctx is abbr for context
 var ctx = canvas.getContext("2d");
 
-
 // creating Balls with this class
 class Ball {
     constructor(radius, color = "#0095DD") {
         this.radius = radius;
         this.color = color;
-        this.x = 600;
-        this.y = 200;
+        this.x = canvas.width/2;
+        this.y = 976;
     }
 
     render(ctx) {
@@ -71,9 +70,9 @@ class Game {
     constructor() {
 
         // creating paddle named saver
-        const saver = new Paddle(100, 20, 'red', canvas.width / 2, canvas.height - 20);
+        const saver = new Paddle(100, 30, 'red', canvas.width / 2, canvas.height-20);
         //  creating a Ball named crusher, 50 is radius
-        const crusher = new Ball(50);
+        const crusher = new Ball(20);
 
         // rendering
         crusher.render(ctx);
