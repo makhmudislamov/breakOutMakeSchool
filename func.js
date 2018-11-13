@@ -12,7 +12,7 @@ class Ball {
         this.radius = radius;
         this.color = color;
         this.x = canvas.width/2;
-        this.y = 976;
+        this.y = canvas.height/2 - this.s;
     }
 
     render(ctx) {
@@ -57,12 +57,23 @@ class Paddle {
 
 // creating Score with this class
 class Score {
-
+    
 }
 
 // creating Lives with this class
 class  Lives {
+    constructor(lives, color = "#0095DD", positionX, positionY) {
+        this.lives = lives
+        this.color = color
+        this.positionX = positionX
+        this.positionY = positionY
+    }
 
+    render(ctx) {
+        ctx.font = "16px Arial";
+        ctx.fillStyle = this.color;
+        ctx.fillText("Lives: " + this.lives, this.positionX, this.positionY );
+    }
 }
 
 
@@ -73,10 +84,14 @@ class Game {
         const saver = new Paddle(100, 30, 'red', canvas.width / 2, canvas.height-20);
         //  creating a Ball named crusher, 50 is radius
         const crusher = new Ball(20);
+        const userLives = new Lives(3, canvas.width - 650, 200);
+        // 
 
         // rendering
         crusher.render(ctx);
-        saver.render(ctx)
+        saver.render(ctx);
+        // not rendering WHY?
+        userLives.render(ctx);
         // ...
 
         // addEventListener('keydown', this.keyPressed) ....
